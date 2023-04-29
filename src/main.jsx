@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import Main from './layout/Main.jsx';
 import Home from './pages/Home/Home.jsx';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import AuthProvider from './providers/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -17,18 +21,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: ()=> fetch("/data.json")
       },
       {
-        path: "/",
-        element: <Home></Home>,
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
-        path: "/",
-        element: <Home></Home>,
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },
@@ -36,6 +37,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
