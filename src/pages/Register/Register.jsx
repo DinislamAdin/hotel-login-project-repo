@@ -104,10 +104,11 @@ const Register = () => {
 
     return (
         <div className='w-50 mx-auto'>
+            <h3 className='text-center'>Register Hear</h3>
             <Form onSubmit={handelSignUp}>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="name" placeholder="Enter name" name='name' required />
+                    <Form.Control type="text" placeholder="Enter name" name='name' required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -117,6 +118,7 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name='password' required />
+                    <label>show</label>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicConfirm">
                     <Form.Label>Confirm  Password</Form.Label>

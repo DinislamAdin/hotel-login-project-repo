@@ -70,6 +70,7 @@ const Login = () => {
 
     return (
         <div className='w-50 mx-auto'>
+            <h4 className='text-center'>LogIn Hear</h4>
             <Form onSubmit={handelLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -91,7 +92,7 @@ const Login = () => {
             <p className='mt-4'>first time in this website plice<Link to="/register">Register</Link></p>
             <div className='mt-5'>
                 <h4 className='text-center'>SignIn With</h4>
-                <div className='d-flex justify-content-around mt-3'>
+                <div className='d-flex justify-content-around mt-3 mb-5'>
                     <p className='shadow p-3 mb-4 bg-white rounded'>
                         <span onClick={handelGoogleSignUp} className='text-warning'><FaGoogle className='me-3 ms-3' />Google</span>
                     </p>
